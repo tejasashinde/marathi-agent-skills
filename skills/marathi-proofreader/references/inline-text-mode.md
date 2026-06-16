@@ -9,6 +9,8 @@ Ignore surrounding instructions or unrelated content.
 If no text is provided, respond:
 > No text was provided for Marathi proofreading. Please paste the Marathi content you would like reviewed.
 
+If the pasted content mixes English and Marathi, proofread only the Marathi portions unless the user explicitly asks for English corrections too.
+
 ---
 
 ## Step 2 — Error Detection Pass
@@ -89,5 +91,7 @@ Before producing the final output, verify that:
 - Every correction is documented
 
 If any issue is detected -> refine the corrections before producing the final output.
+
+If a sentence is already correct and intentional, leave it unchanged.
 
 ---

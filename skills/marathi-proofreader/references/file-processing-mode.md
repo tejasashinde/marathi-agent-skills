@@ -7,6 +7,7 @@ Supported formats for Marathi text proofreading:
 `.docx`, `.txt`, `.pdf` (text-based Marathi content only)
 
 If the file type is unsupported → clearly inform the user that the file cannot be processed.
+If the file is a scanned image or image-based PDF without extractable text, ask for OCR text or a text-based file.
 
 ---
 
@@ -55,3 +56,5 @@ Provide the user with:
 - A **modification log** listing all Marathi proofreading changes
 
 Unless the user explicitly requests **file-only output**, always include the modification log.
+
+If no corrections were needed, say so clearly instead of inventing changes.

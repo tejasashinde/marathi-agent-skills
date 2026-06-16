@@ -1,7 +1,7 @@
 ---
 name: marathi-transliterator
 description: >
-  Transliterates English into Marathi and vice-versa. Use when the user explicitly asks for transliteration between Marathi and English languages only. DO NOT USE for translation.
+  Transliterate Marathi between Devanagari and Roman script only. Use when the user explicitly asks for Marathi transliteration or script conversion. Do not use for translation.
 ---
 
 # Marathi Transliterator
@@ -16,13 +16,14 @@ If ambiguity exists - ask for clarification. Do not guess.
 Do NOT translate meaning between Marathi and English. Words must remain identical phonetically. Only the writing system changes.
 Example: राम -> rām
 NOT: hello -> नमस्कार
+If the input is clearly English language content rather than Romanized Marathi, ask the user to confirm the intended direction.
 
 ---
 
 ## When to Use This Skill
 
 Load this skill when user says:
-- “Transliterate Marathi to English letters.”
+- “Transliterate Marathi to Roman letters.”
 - “Convert Roman to Marathi script.”
 - “Write this Marathi in Latin alphabet.”
 - “Give Marathi in Roman letters.”
@@ -31,9 +32,8 @@ Load this skill when user says:
 Do NOT load this skill for:
 - English to Marathi translation
 - Marathi to English translation
-- Grammar correction or Meaning explanation
-- Meaning translation.
-- Grammar correction.
+- Grammar correction or meaning explanation
+- Meaning translation
 - Paraphrasing.
 - Language explanation.
 
@@ -106,7 +106,6 @@ Use the exact phonemic mapping below.
 ष  -> ṣ
 स  -> s
 ह  -> h
-झ  -> z
 
 ## 3. Dependent Vowel Signs (Matras)
 ा  -> ā      (का -> kā)
@@ -138,6 +137,7 @@ When converting Roman to Devanagari:
 - Treat ā, ī, ū, ṇ, ṭ, ḍ, ś, ṣ as atomic phonemes.
 - Default inherent vowel = अ when consonant appears without vowel marker.
 - If multiple valid spellings exist, ask for clarification instead of guessing.
+- Preserve punctuation, spacing, numerals, and symbols exactly unless the script conversion itself requires a change.
 
 ---
 
@@ -150,6 +150,7 @@ When converting Roman to Devanagari:
 - Never replace Roman words with Marathi synonyms.
 - Never correct grammar.
 - Never change word order.
+- Never normalize a phonetic spelling into a different Marathi word form.
 
 ---
 
@@ -161,6 +162,7 @@ Before returning output:
 - Ensure conjuncts are valid Devanagari combinations.
 - Ensure Roman output uses correct diacritics.
 - If input is malformed, request correction.
+- If the text mixes English and Marathi but the dominant content is not Romanized Marathi, ask before converting.
 
 ---
 
@@ -174,7 +176,7 @@ Before returning output:
 
 ### Roman -> Marathi
 
-majhā nāv ānand āhe -> माझा नाव आनंद आहे
+namaskār -> नमस्कार
 
 ---
 
@@ -195,7 +197,5 @@ bhāṣā -> भाषा
 NOT ALLOWED:
 hello -> नमस्कार
 good morning -> शुभ सकाळ
-
-If the input appears to be English language text instead of Romanized Marathi, ask the user to confirm.
 
 ---

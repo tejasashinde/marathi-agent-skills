@@ -1,11 +1,8 @@
 ---
 name: marathi-recipe-generator
 description: >
-  Use when a user asks to "generate a recipe in Marathi",
-  "give cooking instructions in Marathi", "suggest dishes",
-  or create structured Marathi recipes based on ingredients,
-  cuisine, or dietary preferences.
-version: 1.0
+  Use when a user asks to "generate a recipe in Marathi", "give cooking instructions in Marathi", "suggest dishes", or create structured Marathi recipes from ingredients, cuisine, or dietary preferences.
+version: 1.1
 ---
 
 # 🍲 Marathi Recipe Generator (मराठी पाककृती जनरेटर)
@@ -22,6 +19,7 @@ You think, plan, and verify internally — no delegation.
 - User explicitly requests a recipe in Marathi  
 - User writes in Marathi asking how to cook something  
 - User provides ingredients and expects a Marathi recipe  
+- User wants a Maharashtrian-style dish, home-style variation, or diet-specific Marathi recipe
 
 ## ❌ DO NOT trigger if:
 - Request is only translation  
@@ -45,6 +43,10 @@ Identify:
   - Vegetarian / Vegan / High-protein / etc.
 - Skill level:
   - Assume beginner-friendly unless clearly advanced
+- Regional preference:
+  - Maharashtrian, festive, street-style, home-style, or fusion
+- Output needs:
+  - Servings, prep time, cook time, spice level, or substitutions if the request implies them
 
 If critical info is missing:
 - Ask **at most ONE short clarification question**
@@ -61,11 +63,14 @@ Before writing the recipe, internally ensure:
 - Logical cooking flow:
   - Preparation → Cooking → Finishing  
 - Basic kitchen tools only (unless specified)
+- Use common household measurements and convert them to clear Marathi units where possible
+- If multiple authentic versions exist, choose the most practical home-cooking version and mention the alternative briefly in the notes
 
 Strict checks:
 - No ingredient appears without being listed  
 - No step depends on missing preparation  
 - Sequence must be practical and executable  
+- No vague quantity unless the ingredient is truly optional or genuinely to taste
 
 ---
 
@@ -86,6 +91,7 @@ Follow this format EXACTLY:
 #### ४. टीप
 - practical cooking tips  
 - common mistakes to avoid  
+- approximate prep/cook time if helpful
 
 #### ५. पर्याय
 - substitutions  
@@ -103,6 +109,7 @@ Before final answer, confirm:
 - ✔ भाषा नैसर्गिक मराठीत आहे (translation सारखी वाटत नाही)  
 - ✔ मोजमाप स्पष्ट आणि उपयुक्त आहेत  
 - ✔ unsafe किंवा अव्यवहार्य सूचना नाहीत  
+- ✔ सर्वात practical home-cooking version निवडली आहे
 
 If any issue is found → FIX before responding.
 
@@ -113,16 +120,20 @@ If any issue is found → FIX before responding.
 ## Clarity
 - सोपी आणि स्पष्ट भाषा  
 - प्रत्येक पायरी actionable असावी  
+- recipe should sound like an experienced home cook, not a literal translation
 
 ## Practicality
 - घरगुती स्वयंपाकासाठी योग्य  
 - realistic प्रमाण आणि वेळ  
+- ingredient quantities should match the number of servings implied by the request
 
 ## Authenticity
 - शक्य असल्यास पारंपरिक पद्धती वापराव्यात  
+- when authenticity and practicality conflict, prefer the version most usable in a home kitchen and note the tradeoff
 
 ## Flexibility
 - उपलब्ध नसलेल्या साहित्याचे पर्याय द्यावेत  
+- note common substitutes for pantry limitations when useful
 
 ---
 
@@ -144,6 +155,7 @@ If input is insufficient:
 
 If ingredients don’t form a good recipe:
 - Recommend a better dish alternative  
+- Explain briefly why the ingredient set is weak or mismatched
 
 ---
 
@@ -161,4 +173,4 @@ The output must match:
 
 - Marathi cookbooks  
 - Home cooking standards  
-- Clear, step-by-step YouTube-style instructions  
+- Clear, step-by-step YouTube-style instructions

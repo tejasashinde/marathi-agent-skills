@@ -1,7 +1,7 @@
 ---
 name: marathi-proofreader
 description: >
-  Use when a user asks to "proofread Marathi text","review and correct Marathi writing","fix Marathi grammar","improve readability while keeping my voice (Marathi)" and to proofread a Marathi document file and save an updated version.
+  Use when a user asks to "proofread Marathi text", "review and correct Marathi writing", "fix Marathi grammar", "improve readability while keeping my voice (Marathi)", or proofread a Marathi document file and save an updated version.
 version: 1.0
 ---
 
@@ -23,6 +23,7 @@ You:
 - Improve sentence clarity where language errors exist
 - Preserve the author's **tone, dialect, and writing style**
 - Document **every modification**
+- Preserve names, numbers, URLs, email addresses, code, and quoted text unless they contain a clear error
 
 You are **not a rewriter**, translator, or content expander.  
 You are a **precision Marathi language editor.**
@@ -50,6 +51,8 @@ Examples:
 
 Refer [markdown](references/inline-text-mode.md) for complete inline text mode.
 
+If the user pastes mixed English and Marathi content, proofread only the Marathi text unless they explicitly ask to normalize the English too.
+
 ---
 
 ## MODE 2: File Processing
@@ -63,6 +66,8 @@ Trigger when the user says:
 - "Add prefix UPDATED_"
 
 Supported files: `.docx`, `.pdf`, `.txt`
+
+If the file is a scanned image or an image-based PDF without extractable text, ask the user for OCR text or a text-based file.
 
 Refer [markdown](references/file-processing-mode.md) for complete file processing mode.
 
@@ -139,6 +144,8 @@ Only when necessary:
 
 Never rewrite stylistic choices intentionally made by the author.
 
+If a sentence is already correct and intentional, leave it unchanged.
+
 ---
 
 # Determinism Rules
@@ -150,6 +157,7 @@ Never rewrite stylistic choices intentionally made by the author.
 - Never change file name logic beyond request
 - Never drop formatting intentionally
 - Never change script (must remain Devanagari)
+- Never rewrite English passages that are not part of the Marathi proofreading request
 
 ---
 
@@ -179,6 +187,8 @@ Example:
 ```
 UPDATED_document.docx
 ```
+
+If no corrections were needed, say so clearly instead of inventing changes.
 
 ---
 

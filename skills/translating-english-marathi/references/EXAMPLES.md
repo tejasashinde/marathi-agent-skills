@@ -73,6 +73,17 @@
 | पर्यावरणीय असंतुलनामुळे जैवविविधतेवर गंभीर परिणाम होत आहेत. | Environmental imbalance is causing serious impacts on biodiversity. |
 
 
+## Mixed and Structured Content
+
+| Source | Translation |
+|------|------|
+| Project Alpha completed on 12 March 2026. | प्रोजेक्ट Alpha 12 मार्च 2026 रोजी पूर्ण झाला. |
+| Visit https://example.com for details. | तपशीलांसाठी https://example.com ला भेट द्या. |
+| Balance due: $120.50 | देय शिल्लक: $120.50 |
+| Step 1: Open the file, then click Save. | पायरी 1: फाइल उघडा, मग Save वर क्लिक करा. |
+| Please review clause 4.2 in the agreement. | कृपया करारातील कलम 4.2 तपासा. |
+
+
 # EDGE CONDITIONS
 
 | Mixed Language Input | English->Marathi | Marathi->English |

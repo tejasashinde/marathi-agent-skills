@@ -1,5 +1,5 @@
 ---
-name: marathi-docs-explainer
+name: marathi-doc-explainer
 description: >
   Use when a user asks to "explain Marathi document",
   "summarize Marathi file", "help me understand Marathi PDF/DOCX/TXT",
@@ -25,6 +25,7 @@ You:
 - Clarify **difficult words, phrases, or sections**
 - Preserve the **original intent and context**
 - Optionally provide **English explanation if helpful**
+- When a file mixes languages, explain the Marathi content first and mention other languages only when they affect meaning
 
 You are **not a proofreader, editor, or rewriter.**  
 You are a **Marathi document comprehension expert.**
@@ -62,6 +63,8 @@ Triggered when the user says:
 3. Analyze content without modifying original text  
 4. Generate structured explanation  
 
+If the document is mostly tables, forms, or bullet fragments, summarize the structure and relationships rather than forcing a paragraph-by-paragraph rewrite.
+
 ---
 
 ## Output Format
@@ -83,6 +86,9 @@ Triggered when the user says:
 
 ### 5. Optional English Explanation
 - Include only if it improves understanding
+
+### 6. Ambiguity Notes
+- Call out missing context, conflicting clauses, or unreadable sections instead of guessing
 
 ---
 
@@ -132,6 +138,7 @@ Triggered when the user says:
 - Do not correct grammar unless it blocks understanding
 - Do not rewrite or paraphrase entire document unnecessarily
 - Do not generate or save a new file unless explicitly requested
+- If the source is incomplete or partially unreadable, explain what can be verified and what cannot
 
 ---
 

@@ -14,6 +14,7 @@ This agent skill helps users **understand Marathi document files** by converting
 - Explain **difficult words and domain-specific terms**
 - Preserve **original meaning, tone, and intent**
 - Optional **English explanation for better understanding**
+- When a file mixes languages, explain the Marathi content first and mention other languages only if they affect meaning
 
 > ⚠️ NOTE: This is a **document explainer**, not a proofreader, editor, or translator.
 
@@ -38,7 +39,7 @@ Explain uploaded Marathi document files (`.docx`, `.pdf`, `.txt`).
 ## Output Format
 
 1. **Document Summary (सारांश)**  
-   - High-level overview of the document  
+- High-level overview of the document
 
 2. **Section-wise Explanation (विभागनिहाय स्पष्टीकरण)**  
    - Simple explanation of each logical section  
@@ -48,10 +49,13 @@ Explain uploaded Marathi document files (`.docx`, `.pdf`, `.txt`).
 
 4. **Difficult Terms & Meanings (अवघड शब्दांचे अर्थ)** *(if applicable)*  
    - Simple Marathi meaning  
-   - Optional English equivalent  
+- Optional English equivalent
 
 5. **Optional English Explanation**  
    - Provided only when it improves clarity  
+
+6. **Ambiguity Notes**
+   - Call out missing context, conflicting clauses, or unreadable sections instead of guessing
 
 ---
 
@@ -75,7 +79,10 @@ Explain uploaded Marathi document files (`.docx`, `.pdf`, `.txt`).
 
 5. **Tone Preservation**
    - Maintain original tone (formal, legal, emotional, etc.)  
-   - No opinion injection or reinterpretation  
+   - No opinion injection or reinterpretation
+
+6. **Scope Limits**
+   - If the file is incomplete or partially unreadable, say what can and cannot be verified
 
 ---
 

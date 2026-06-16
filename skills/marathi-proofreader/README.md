@@ -13,6 +13,7 @@ This agent skill helps **proofread Marathi text** or **Marathi document files** 
 - Improve sentence clarity without changing meaning
 - Preserve **author’s voice, tone, and dialect**
 - Document **every modification**
+- Preserve names, numbers, URLs, email addresses, code, and quoted text unless they contain a clear error
 
 > ⚠️ NOTE: This is a **precision editor**, not a translator or content rewriter.
 
@@ -30,6 +31,8 @@ Proofread text pasted directly:
 
 > Corrected text and a list of changes are returned.
 
+If the input mixes English and Marathi, only the Marathi text is proofread unless the user asks for English changes too.
+
 ### 2. File Processing Mode
 Proofread uploaded `.docx`, `.pdf`, or `.txt` files:
 
@@ -39,6 +42,8 @@ Proofread uploaded `.docx`, `.pdf`, or `.txt` files:
 - "Return corrected version"  
 
 > Corrected file is saved (prefixed with `UPDATED_`) and a list of corrections is provided.
+
+If the file is a scanned image or image-based PDF without extractable text, ask for OCR text or a text-based file.
 
 ---
 
@@ -62,6 +67,8 @@ Proofread uploaded `.docx`, `.pdf`, or `.txt` files:
 5. **Readability**
    - Fix awkward sentences caused by grammar errors
    - Maintain meaning; never rewrite stylistic choices
+
+If a sentence is already correct and intentional, leave it unchanged.
 
 ---
 

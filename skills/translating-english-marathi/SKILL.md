@@ -1,7 +1,7 @@
 ---
 name: translating-english-marathi
 description: >
-  Translates text between English and Marathi and vice-versa. Use when the user asks to translate text between English and Marathi, convert English into Marathi, convert Marathi into English, or requests Marathi translation, English translation or bilingual conversion.
+  Translate between English and Marathi while preserving meaning, tone, and formatting. Use when the user asks for English-to-Marathi or Marathi-to-English translation, including mixed-language text where the translation direction is clear.
 ---
 
 # Translating English Marathi
@@ -14,6 +14,7 @@ DO NOT:
 - Change the meaning
 
 Return ONLY the translated text or translated file content.
+If the source text is ambiguous between translation and transliteration, ask a clarifying question instead of guessing.
 
 ## Quick start
 
@@ -57,11 +58,13 @@ Preserve:
 - sentence order
 - document structure
 - table structure (for CSV)
+- markdown or list structure, when present
 
 Do NOT translate:
 - URLs
 - file paths
 - code snippets
+- product names or legal citations unless the user explicitly asks for localization
 
 ---
 
@@ -73,6 +76,7 @@ If a file contains:
 - technical identifiers
 
 Translate only natural language text and leave other data unchanged.
+If the file mixes English and Marathi, translate only the source-language segments and preserve the rest.
 
 ---
 
@@ -96,6 +100,7 @@ Translation direction:
 
 - English -> Marathi  
 - Marathi -> English
+- If the language is mixed or uncertain, ask for clarification before translating
 
 ---
 
@@ -113,6 +118,7 @@ Avoid:
 - Literal word-by-word translation
 - Grammar distortion
 - Meaning alteration
+- Transliteration when translation is expected
 
 ---
 
@@ -128,6 +134,7 @@ Avoid:
 - Hindi substitutions
 - Mixed-language output
 - Phonetic transliteration
+- Over-formalizing casual Marathi unless the source already uses a formal register
 
 ---
 
@@ -143,6 +150,7 @@ Ensure:
 Avoid:
 - Literal structure transfer
 - Broken English
+- Adding flourishes that are not in the source
 
 ---
 
@@ -161,6 +169,7 @@ Do not include:
 - additional formatting
 
 Multiple sentences must be translated completely while preserving their sequence.
+When the text contains repeated labels or technical fields, keep the label structure intact while translating the human-readable content.
 
 ---
 
